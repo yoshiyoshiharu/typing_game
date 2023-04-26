@@ -3,15 +3,17 @@ package typing
 import (
 	"os"
 	"bufio"
-	"fmt"
 )
 
-func Judge() {
+func Judge(title string) bool {
 	scanner := bufio.NewScanner(os.Stdin)
 
-	for {
-		scanner.Scan()
-		in := scanner.Text()
-	  fmt.Println("in: ", in)
+	scanner.Scan()
+	input := scanner.Text()
+
+	if title == input {
+		return true
+	} else {
+		return false
 	}
 }
